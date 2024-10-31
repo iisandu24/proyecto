@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estiloprueba.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor-login">
+            <h2>Iniciar Sesión</h2>
+            <form id="formularioLogin" action="loginprueba.php" method="post">
+                <div class="grupo-input">
+                    <input type="text" id="usuarioLogin" name="usuarioLogin" placeholder="Nombre" required minlength="5" maxlength="15">
+                </div>
+                <div class="grupo-input">
+                    <input type="password" id="contrasenaLogin" name="contrasenaLogin" placeholder="Contraseña" required minlength="9" maxlength="20">
+                </div>
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" id="btnRegistro">Registrar Usuario</button>
+                <p id="mensajeErrorLogin" class="mensaje-error"></p>
+                <a href="../pag_principal/indexprincipal_invitado.php">Entrar como invitado</a>
+            </form>
+        </div>
+        <div class="contenedor-imagen">
+            <img src="Captura ISANDU.png" alt="">
+        </div>
+    </div>
+    <script>
+        document.getElementById('formularioLogin').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que el formulario recargue la página
+
+            let formData = new FormData(this);
+
+            fetch('loginprueba.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === "success_admin") {
+                    window.location.href = '../admin/index.php'; // Redirige al index de admin
+                } else if (data === "success") {
+                    window.location.href = '../pag_principal/indexprincipal.php'; // Redirige al index de usuarios comunes
+                } else {
+                    document.getElementById('mensajeErrorLogin').textContent = data; // Mostrar error
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('mensajeErrorLogin').textContent = 'Error al iniciar sesión';
+            });
+        });
+
+        // Mostrar formulario de registro al hacer clic en el botón
+        document.getElementById('btnRegistro').addEventListener('click', () => {
+            window.location.href = '../hacer_registro/registrar_usuario.html';
+        });
+    </script>
+</body>
+</html>

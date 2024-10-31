@@ -1,0 +1,166 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header-container {
+    background-color: #2DA645; /* Fondo verde en el header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px;
+    height: auto; /* Altura ajustada */
+}
+
+.header-container img.right-image {
+    height: 70px;
+    width: auto;
+    padding-left: 70px;
+}
+
+.btn_volver {
+    position: absolute;
+    top: 32px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #2DA645;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn_volver:hover {
+    background-color: #177429;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.nosotros-padre {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nosotros-padre .info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #004400;
+}
+
+.nosotros-padre .info p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Sección Redes Sociales */
+.redes {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.redes p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.redes .icons a {
+    margin: 0 10px;
+}
+
+.redes .icons img.icon {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.redes .icons img.icon:hover {
+    transform: scale(1.1);
+}
+
+.doslogos {
+    width: 400px;
+    height: auto;
+    margin-left: 220px;
+    padding-bottom: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .header-container img.right-image {
+        padding-left: 0;
+        height: 60px;
+    }
+
+    .btn_volver {
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .nosotros-padre {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .nosotros-padre .info h2 {
+        font-size: 22px;
+    }
+
+    .nosotros-padre .info p {
+        font-size: 14px;
+    }
+
+    .doslogos {
+        width: 100%;
+        margin-left: 0;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn_volver {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .header-container img.right-image {
+        height: 50px;
+    }
+
+    .redes p {
+        font-size: 16px;
+    }
+
+    .redes .icons img.icon {
+        width: 30px;
+    }
+}

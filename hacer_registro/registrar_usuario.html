@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que esta ruta sea correcta -->
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Contenedor del Registro -->
+        <div class="contenedor-registro">
+            <h2>Registrar Usuario</h2>
+            <form id="formularioRegistro">
+                <div class="grupo-input">
+                    <input type="text" id="usuarioRegistro" name="usuarioRegistro" placeholder="Usuario" required minlength="5" maxlength="15">
+                </div>
+                <div class="grupo-input">
+                    <input type="email" id="emailRegistro" name="emailRegistro" placeholder="Email" required>
+                </div>
+                <div class="grupo-input">
+                    <input type="password" id="contrasenaRegistro" name="contrasenaRegistro" placeholder="Contraseña" required minlength="9" maxlength="20">
+                </div>
+                <button type="submit" id="btnRegistrar">Registrar</button>
+                <button type="button" id="btnVolverLogin">Volver al Inicio de Sesión</button>
+                <p id="mensajeErrorRegistro" class="mensaje-error"></p>
+                <p id="resultadoRegistro"></p>
+            </form>
+        </div>
+        <div class="contenedor-imagen">
+            <img src="Captura ISANDU.png" alt="Imagen representativa">
+        </div>
+    </div>
+
+    <script>
+        // Envío de datos del formulario de registro
+        document.getElementById('formularioRegistro').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evitar que la página se recargue
+            let formData = new FormData(this);
+
+            fetch('prueba.php', {  // Asegúrate de que esta ruta sea correcta
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.text(); // Asegúrate de retornar la respuesta como texto
+            })
+            .then(data => {
+                console.log("Datos recibidos:", data); // Mostrar datos recibidos
+                if (data.trim() === "registro_exitoso") {
+                    window.location.href = '../login/iniciar_sesion.html'; // Redirige al login
+                } else {
+                    document.getElementById('resultadoRegistro').textContent = data; // Mostrar el error
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error); // Mostrar error en la consola
+                document.getElementById('resultadoRegistro').textContent = 'Error al registrar usuario';
+            });
+        });
+
+        // Volver al formulario de inicio de sesión
+        document.getElementById('btnVolverLogin').addEventListener('click', () => {
+            window.location.href = '../login/iniciar_sesion.html';
+        });
+
+        document.getElementById('emailRegistro').addEventListener('blur', function() {
+    const email = this.value;
+
+    if (email) {
+        fetch('verificar_correo.php', {  // Asegúrate de que la ruta sea correcta
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `email=${encodeURIComponent(email)}`
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data === 'correo_existe') {
+                document.getElementById('resultadoRegistro').textContent = 'Este correo ya está registrado.';
+            } else {
+                document.getElementById('resultadoRegistro').textContent = '';  // Limpia el mensaje si el correo no está registrado
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+});
+
+    </script>
+</body>
+</html>

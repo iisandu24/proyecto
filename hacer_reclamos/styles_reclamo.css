@@ -1,0 +1,190 @@
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del body */
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo del header */
+.header {
+    background-color: #2DA645; /* Fondo verde en el header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px;
+    height: auto; /* Altura ajustada */
+}
+
+.header-container img.right-image {
+    height: 70px; /* Ajuste del tamaño del logo */
+    padding-left: 70px;
+}
+
+/* Botón Volver */
+.btn_volver {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #2DA645;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn_volver:hover {
+    background-color: #177429;
+}
+
+/* Estilo del formulario */
+.reclamo-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 600px; /* Ancho ajustado */
+    background-color: #fff;
+}
+
+.reclamo-form fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.reclamo-form legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.reclamo-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.reclamo-form input, 
+.reclamo-form textarea, 
+.reclamo-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo de la sección de categorías */
+.categorias {
+    display: flex;
+    flex-direction: column; /* Coloca las opciones en una columna */
+    gap: 10px; /* Espacio entre las opciones */
+}
+
+.categorias label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinea el texto y el checkbox */
+    width: 100%; /* Ocupar todo el ancho para alineación */
+}
+
+.categorias input[type="checkbox"] {
+    margin-left: 10px; /* Asegura espacio adecuado entre el texto y la casilla */
+}
+
+/* Botón de enviar */
+.reclamo-form button {
+    width: 150px;  /* Ancho ajustado */
+    background-color: #28a745;  /* Color verde */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px auto; /* Centrar el botón */
+    display: block;
+}
+
+.reclamo-form button:hover {
+    background-color: #218838; /* Efecto hover en verde más oscuro */
+}
+
+/* Estilo para el mensaje de texto en caso de error */
+.textoprueba {
+    background-color: #ccffcc; /* Verde claro */
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto horizontalmente */
+    display: flex;
+    justify-content: center; /* Centrar el contenido */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Opcional, puede ajustarse según el tamaño deseado */
+}
+
+/* Estilo del mensaje de reclamo exitoso */
+.reclamoexito {
+    display: flex; 
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    background-color: #f0f8ff; /* Color de fondo suave */
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.reclamoexito .message-box {
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    text-align: center; /* Centrar texto */
+    max-width: 400px; 
+}
+
+.reclamoexito .message-box h1 {
+    color: #28a745; 
+    font-size: 24px; 
+    margin-bottom: 10px; 
+}
+
+.reclamoexito .message-box p {
+    color: #555555;
+    font-size: 16px; 
+    margin-bottom: 20px; /* Espacio para separar del botón */
+}
+
+/* Estilo del botón Volver */
+.btn_volver {
+    padding: 10px 20px;
+    background-color: #2DA645; 
+    color: #fff; 
+    text-decoration: none; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; 
+    display: inline-block; /* Asegura que el botón se trate como bloque en línea */
+    margin-top: 10px; /* Añadir un margen superior para separar del texto */
+}
+
+/* Efecto hover en el botón Volver */
+.btn_volver:hover {
+    background-color: #177429; 
+}
+
+
+

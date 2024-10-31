@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclamos Urbanos Paysandú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="styles_reclamo.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container"> 
+            <a href="../pag_principal/indexprincipal.php" class="btn_volver"><img src="arrow-left-long-solid.svg" width="25px"></a>
+            <img src="/pag_principal/logonuevo.png" class="right-image">
+        </div>
+    </header>
+
+    <main>
+        <form action="subir_reclamo.php" method="POST" enctype="multipart/form-data" class="reclamo-form">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required minlength="20" maxlength="35">
+
+                <label for="cedula">Cédula de Identidad:</label>
+                <input type="text" id="cedula" name="cedula" required  minlength="8" maxlength="8">
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required minlength="9" maxlength="9">
+
+                <label for="gmail">Correo Electrónico:</label>
+                <input type="email" id="gmail" name="gmail" required minlength="15" maxlength="120"> <!-- Cambiado a "gmail" -->
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalle del Reclamo</legend>
+
+                <label for="ubicacion">Ubicación:</label>
+                <textarea id="ubicacion" name="ubicacion" rows="3" required minlength="4" maxlength="180"></textarea>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="3" required maxlength="240"></textarea>
+
+                <label for="defecto">Categoría del problema:</label>
+                <div class="categorias">
+                    <div>
+                        <input type="radio" id="basura" name="defecto" value="basura"> 
+                        <label for="basura">Acumulación de basura</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="alumbrado" name="defecto" value="alumbrado"> 
+                        <label for="alumbrado">Alumbrado Público</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="caño" name="defecto" value="cañería"> 
+                        <label for="caño">Caños Rotos</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="calles" name="defecto" value="calles"> 
+                        <label for="calles">Calles</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="otro" name="defecto" value="otro" onclick="toggleOtro()"> 
+                        <label for="otro">Otro</label>
+                    </div>
+                </div>
+
+                <div id="otro-text-container" style="display: none;">
+                    <label for="otro-texto">Especificar Otro:</label>
+                    <input type="text" id="otro-texto" name="otro-texto">
+                </div>
+
+                <label for="imagen">Subir Imagen:</label>
+                <input type="file" id="imagen" name="imagen">
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script>
+        function toggleOtro() {
+            const otroRadio = document.getElementById('otro');
+            const otroTextContainer = document.getElementById('otro-text-container');
+            otroTextContainer.style.display = otroRadio.checked ? 'block' : 'none';
+        }
+
+        // Adicionalmente, aseguramos que el texto "Otro" se oculte si se selecciona alguna otra opción
+        const radios = document.querySelectorAll('input[name="defecto"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', toggleOtro);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+* {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina padding */
+    box-sizing: border-box; /* Incluye padding y bordes en el tamaño */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Aplica fuente Montserrat */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    color: #333; /* Texto gris oscuro */
+}
+
+header {
+    background-color: #2DA645; /* Fondo verde en el header */
+    padding: 25px 0; /* Espaciado vertical en el header */
+}
+
+.header-container {
+    display: flex; /* Diseño flexible */
+    justify-content: space-between; /* Elementos en extremos */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+.right-image {
+    width: 260px; /* Ancho 100px */
+    height: auto; /* Altura ajustada */
+    padding-left: 20px;
+}
+
+/* Botones debajo del header */
+.button-container {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 15px 0; /* Espaciado superior e inferior */
+    text-align: center; /* Centra los botones */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.button {
+    color: #2DA645; /* Texto verde */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Texto de 16px */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-flex; /* Botones en línea */
+    align-items: center; /* Alinea icono y texto */
+    margin: 0 15px; /* Separación entre botones */
+    padding: 10px 20px; /* Espaciado interno de los botones */
+    border-radius: 30px; /* Bordes redondeados */
+    border: 2px solid #2DA645; /* Borde verde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra de botón */
+    transition: all 0.3s ease; /* Transición suave */
+    transform: scale(1); /* Escala inicial normal */
+}
+
+.button:hover {
+    background-color: #2DA645; /* Fondo verde al hover */
+    color: white; /* Texto blanco al hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+    transform: scale(1.1); /* Aumenta el tamaño del botón al hover */
+}
+
+.icon {
+    width: 20px; /* Ancho del icono 20px */
+    height: 20px; /* Altura del icono 20px */
+    margin-right: 10px; /* Espaciado entre icono y texto */
+}
+
+main {
+    max-width: 1200px; /* Ancho máximo de 1200px */
+    margin: 20px auto; /* Centra el contenido */
+    padding: 0 20px; /* Espaciado interno lateral */
+}
+
+.reclamos h2 {
+    font-size: 24px; /* Tamaño del texto 24px */
+    margin-bottom: 20px; /* Margen inferior */
+    color: #2DA645; /* Texto verde */
+    text-align: center; /* Texto centrado */
+}
+
+.reclamo {
+    display: flex; /* Diseño flexible */
+    background-color: white; /* Fondo blanco */
+    margin-bottom: 20px; /* Margen inferior */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    flex-direction: column; /* Coloca elementos en columna */
+    align-items: center; /* Centra los elementos dentro */
+}
+
+.usuario {
+    margin-right: 20px; /* Espaciado derecho */
+}
+
+.usuario-img {
+    width: 50px; /* Ancho 50px */
+    height: 50px; /* Altura 50px */
+    border-radius: 50%; /* Imagen circular */
+    background-color: #ccc; /* Fondo gris claro */
+}
+
+.imagenes {
+    display: flex; /* Diseño flexible para imágenes */
+    justify-content: space-between; /* Distribuye entre imágenes */
+    flex-grow: 1; /* Ocupa todo el espacio restante */
+}
+
+.antes, .despues {
+    width: 45%; /* Cada imagen ocupa el 45% del contenedor */
+    text-align: center; /* Texto centrado */
+}
+
+.img-reclamo {
+    width: 80%; /* Ancho de la imagen 100% */
+    height: auto; /* Altura ajustada automáticamente */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-top: 10px; /* Margen superior */
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+.descripcion {
+    text-align: center; /* Centra el texto de la descripción */
+    padding-top: 10px; /* Padding superior */
+    color: #555; /* Texto gris más claro */
+    font-size: 16px; /* Tamaño de fuente de la descripción */
+    line-height: 1.5; /* Espaciado de línea para mayor legibilidad */
+    border-top: 1px solid #ddd; /* Borde superior gris claro para separar */
+    margin-top: 10px; /* Margen superior para separación */
+}
+
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo al viewport */
+    z-index: 1000; /* Encima de otros elementos */
+    left: 0; /* Alineado a la izquierda */
+    top: 0; /* Alineado a la parte superior */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.lightbox-content {
+    max-width: 90%; /* Máximo ancho de la imagen en el lightbox */
+    max-height: 90%; /* Máxima altura de la imagen en el lightbox */
+}
+
+.close {
+    position: absolute; /* Posición absoluta */
+    top: 20px; /* Espaciado desde la parte superior */
+    right: 30px; /* Espaciado desde la derecha */
+    color: white; /* Color blanco */
+    font-size: 30px; /* Tamaño de fuente */
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+.button-volver{
+    color: #248838; /* Texto verde */
+    align-items: start; /* Alinea icono y texto */
+    padding: 10px 20px; /* Espaciado interno de los botones */
+    transition: all 0.3s ease; /* Transición suave */
+    transform: scale(1);
+}
+
+.right-image-sobre{
+    width: 100px; /* Ancho 100px */
+    height: auto; /* Altura ajustada */
+    align-items: end;
+}
+
+
+/* Para que sea Responsive en Pantallas Chicas*/
+@media (max-width: 576px) {
+    .button-container .button {
+        margin: 10px 5px;
+        font-size: 14px;
+    }
+}
+
+/* Para que sea Responsive en Pantallas Medianas */
+@media (min-width: 577px) and (max-width: 768px) {
+    .button-container .button {
+        margin: 10px 10px; 
+        padding: 10px 18px; 
+    }
+}
+
+/* Para que sea Responsive en Pantallas Grandes */
+@media (min-width: 769px) {
+    .button-container .button {
+        margin: 10px 20px;
+        padding: 12px 24px;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Publicación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+        /* Reseteo de márgenes y padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo general del body */
+        body {
+            background-color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilo del header */
+        .header {
+            background-color: #2DA645; /* Fondo verde en el header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 23px;
+            height: auto; /* Altura ajustada */
+        }
+
+        .header-container img.right-image {
+            height: 70px; /* Ajuste del tamaño del logo */
+            padding-left: 70px;
+        }
+
+        /* Botón Volver */
+        .btn_volver {
+            position: absolute;
+            top: 35px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #2DA645;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_volver:hover {
+            background-color: #177429;
+        }
+
+        /* Estilo del formulario */
+        .publicacion-form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 600px; /* Ancho ajustado */
+            background-color: #fff;
+        }
+
+        .publicacion-form fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .publicacion-form legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .publicacion-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .publicacion-form input, 
+        .publicacion-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Botón de enviar */
+        .publicacion-form button {
+            width: 150px;  /* Ancho ajustado */
+            background-color: #28a745;  /* Color verde */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 20px auto; /* Centrar el botón */
+            display: block;
+        }
+
+        .publicacion-form button:hover {
+            background-color: #218838; /* Efecto hover en verde más oscuro */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container"> 
+            <a href="index.php" class="btn_volver">
+                <img src="arrow-left-long-solid.svg" width="25px" alt="Volver">
+            </a>
+            <img src="logonuevo.png" class="right-image" alt="Logo">
+        </div>
+    </header>
+
+    <main>
+        <form action="subir_publicacion.php" method="POST" enctype="multipart/form-data" class="publicacion-form">
+            <fieldset>
+                <legend>Crear Publicación</legend>
+
+                <label for="Imagen_Antes">Antes:</label>
+                <input type="file" id="Imagen_Antes" name="Imagen_Antes" required>
+
+                <label for="Imagen_Despues">Después:</label>
+                <input type="file" id="Imagen_Despues" name="Imagen_Despues" required>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required maxlength="650"></textarea>
+            </fieldset>
+
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
+
+</body>
+</html>

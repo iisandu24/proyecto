@@ -1,0 +1,100 @@
+/* Importar la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+body {
+    background-color: #41A03B; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    width: 900px; /* Ancho total del contenedor */
+    height: 500px; /* Altura del contenedor */
+    background-color: #4A983B; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.contenedor-registro {
+    background-color: #006600; /* Color de fondo del contenedor de registro */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 20px 0 0 20px; /* Esquinas redondeadas */
+    width: 40%; /* Ancho del contenedor del formulario */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra verticalmente */
+    
+}
+
+h2 {
+    color: white; /* Color del encabezado */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-weight: 500; /* Peso de la fuente */
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior */
+    border-radius: 5px; /* Esquinas redondeadas */
+    border: none; /* Sin borde */
+    font-family: 'Montserrat', sans-serif; /* Fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+button {
+    width: 100%; /* Ancho completo */
+    padding: 15px; /* Espaciado interno */
+    background-color: #004400; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cursor de puntero */
+    margin-top: 10px; /* Espaciado superior */
+    font-family: 'Montserrat', sans-serif; /* Fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: 700; /* Peso de la fuente */
+}
+
+button:hover {
+    background-color: #002200; /* Color de fondo al pasar el mouse */
+}
+
+a {
+    color: white; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+    margin-top: 15px; /* Espaciado superior */
+    display: inline-block; /* Se comporta como un bloque en línea */
+    font-family: 'Montserrat', sans-serif; /* Fuente */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Imagen */
+.contenedor-imagen {
+    width: 60%; /* Ancho del contenedor de la imagen */
+    display: flex; /* Flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.contenedor-imagen img {
+    width: 100%; /* Ajusta la imagen al 100% del contenedor */
+    max-height: 500px; /* Limita la altura máxima de la imagen */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    border-radius: 0 20px 20px 0; /* Esquinas redondeadas */
+}
+
+p{
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+}
+

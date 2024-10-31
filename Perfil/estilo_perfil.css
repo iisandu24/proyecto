@@ -1,0 +1,205 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e9ecef; /* Fondo más claro y profesional */
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #2DA645; /* Azul oscuro para un estilo más formal */
+    padding: 25px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.right-image {
+    width: 260px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Botón Volver */
+.btn_volver {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #2DA645;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn_volver:hover {
+    background-color: #177429;
+}
+
+/* Main Content */
+main {
+    display: flex; /* Usar flex para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: calc(100vh - 100px); /* Altura ajustada */
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 600px; /* Cambia el tamaño máximo para mantenerlo centrado */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más visible */
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-container h2 {
+    font-size: 26px; /* Tamaño más grande para admins */
+    color: #2DA645;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px; /* Padding más amplio */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Tamaño de fuente más grande */
+}
+
+/* Botones */
+button {
+    background-color: #2DA645;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #177429;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra más marcada al hover */
+    transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Logout Button */
+.logout-btn {
+    color: #6c757d; /* Gris para un tono más neutro */
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.logout-btn:hover {
+    color: #495057; /* Sutil cambio en hover */
+}
+
+/* Grupo de botones alineados */
+.button-group {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;
+    gap: 15px; /* Espacio entre los botones */
+}
+
+/* Responsividad */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .right-image {
+        width: 180px;
+    }
+
+    .btn_volver {
+        top: 15px;
+        left: 10px;
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-container h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Pantallas extra pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+    .btn_volver {
+        top: 10px;
+        left: 5px;
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .right-image {
+        width: 150px;
+    }
+
+    .profile-container h2 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

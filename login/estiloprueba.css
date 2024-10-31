@@ -1,0 +1,160 @@
+/* Importar la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+body {
+    background-color: #41A03B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row; /* Mantener el layout en filas para pantallas grandes */
+    width: 900px;
+    height: 500px;
+    background-color: #4A983B;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-login {
+    background-color: #006600;
+    padding: 40px;
+    border-radius: 20px 0 0 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #004400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: #002200;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Imagen */
+.contenedor-imagen {
+    width: 60%;
+    background-size: contain;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+}
+
+/* Responsividad */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .contenedor {
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Layout en columna para pantallas medianas */
+        border-radius: 10px;
+    }
+
+    .contenedor-login, .contenedor-imagen {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .contenedor-imagen img {
+        border-radius: 0 0 10px 10px;
+        max-height: 300px; /* Limitar la altura de la imagen */
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .contenedor {
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Cambia a layout en columna */
+        border-radius: 10px;
+    }
+
+    .contenedor-imagen {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px; /* Añade margen entre la imagen y el formulario */
+    }
+
+    .contenedor-imagen img {
+        width: 100%;
+        max-height: 200px; /* Limitar la altura de la imagen */
+        border-radius: 10px;
+    }
+
+    .contenedor-login {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px; /* Ajustar el borde redondeado */
+    }
+
+    input[type="text"], input[type="password"], button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

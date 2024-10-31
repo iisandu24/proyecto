@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de contacto</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <section class="form_wrap">
+        <a href="../pag_principal/indexprincipal.php" class="btn_volver"><img src="arrow-left-long-solid.svg" width="25px"></a>
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+            </section>
+        </section>
+
+        <form action="enviar.php" method="post" class="form_contact">
+            <h2>Contactanos</h2>
+            <div class="user_info">
+                <label for="names">Nombres *</label>
+                <input type="text" id="names" name="nombre"  minlength="8" maxlength="50" required>
+
+                <label for="phone">Telefono / Celular</label>
+                <input type="text" id="phone" name="telefono" minlength="9" maxlength="10">
+
+                <label for="email">Correo electronico *</label>
+                <input type="text" id="email" name="correo" minlength="13" maxlength="60" required>
+
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" minlength="20" maxlength="400" required></textarea>
+
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+            </div>
+        </form>
+
+    </section>
+
+</body>
+</html>
